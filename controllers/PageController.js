@@ -3,6 +3,7 @@ const prisma = new PrismaClient();
 
 class PageController {
   async renderFlight(req, res) {
+
     const flightId = parseInt(req.params.id);
 
     try {
@@ -39,15 +40,21 @@ class PageController {
           passenger.passengerBoardingPassId = boardingPassenger.boarding_pass_id;
           passenger.purchaseId = boardingPassenger.purchase_id;
           passenger.seatTypeId = boardingPassenger.seat_type_id;
-          passenger.seatId = boardingPassenger.seat_id;
+          passenger.seatId = null;
         }
       });
 
-      function order(arr) {
-        return arr.sort((a, b) => a.seatTypeId - b.seatTypeId);
+      function orderPassengers(passengers) {
+        return passengers.sort((a, b) => {
+          if (a.seatTypeId === b.seatTypeId) {
+            return a.purchaseId - b.purchaseId;
+          } else {
+            return a.seatTypeId - b.seatTypeId;
+          }
+        });
       }
 
-      const passengers = order(UnorderPassengers);
+      const passengers = orderPassengers(UnorderPassengers);
       
 
 
