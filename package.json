@@ -1,0 +1,24 @@
+{
+  "name": "postulacion-bsale",
+  "version": "1.0.0",
+  "description": "Application exercise Airline check-in simulation - for BSALE",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^4.13.0",
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.22",
+    "path": "^0.12.7",
+    "prisma": "^4.13.0"
+  }
+}
