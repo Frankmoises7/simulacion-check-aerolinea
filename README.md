@@ -33,7 +33,11 @@ I get the seatId of the db.
 I assign fetched properties to the passenger to display in the response.
 I order the passengers by purchase and then I assign them a seat.
 If the passenger is a minor, I assign a seat next to the adult who is in the same purchase.
-then I show the date
+then I show the data.
+
+For everything to work you must use the url where the project is deployed and add the following route:
+
+**/flights/:id/passengers**
 
 
 ### Folder structure
