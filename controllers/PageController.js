@@ -76,10 +76,6 @@ class PageController {
           passenger.seatId = seatId[i].seat_id;
       });
 
-      //Todo
-      //FUNCION PARA LOS MENORES DE EDAD
-      
-
       //Muestro toda la data
       res.status(200).json({
         code: 200,
