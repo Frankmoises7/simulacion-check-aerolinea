@@ -70,8 +70,14 @@ class PageController {
 
       //Le asigno un seat a los passengers ordenados
       passengers.forEach((passenger, i) => {
+          if(passenger.age < 18 && passenger.purchaseId === passengers[i+1].purchaseId){
+            passenger.seatId = seatId[i - 1].seat_id;
+          }
           passenger.seatId = seatId[i].seat_id;
       });
+
+      //Todo
+      //FUNCION PARA LOS MENORES DE EDAD
       
 
       //Muestro toda la data
